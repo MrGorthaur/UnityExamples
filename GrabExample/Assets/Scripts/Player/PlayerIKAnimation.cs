@@ -7,6 +7,8 @@ public class PlayerIKAnimation : MonoBehaviour
     [SerializeField] private Transform _grabTarget;
     [SerializeField, Range(0, 1)] private float _switchWeight;
     [SerializeField] private Transform _basketTarget;
+    [SerializeField, Range(0, 1)] private float _switchFinalWeight;
+    [SerializeField] private Transform _basketFinalTarget;
     [SerializeField] private Transform _hintTarget;
     private Animator _animator;
 
@@ -35,6 +37,9 @@ public class PlayerIKAnimation : MonoBehaviour
     {
         _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, _rightHandWeight);
         _animator.SetIKPosition(AvatarIKGoal.RightHand, _grabTarget.position);
+        
+        _animator.SetIKHintPositionWeight(AvatarIKHint.RightElbow, 1f);
+        _animator.SetIKHintPosition(AvatarIKHint.RightElbow, _hintTarget.position);
         if (_rightHandWeight > 0.9f)
             SwitchBetweenTargets();
         _animator.ResetTrigger("Grab");
@@ -44,7 +49,7 @@ public class PlayerIKAnimation : MonoBehaviour
         if (_basketTarget != null)
         {
             _animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
-            _animator.SetIKPosition(AvatarIKGoal.LeftHand, _basketTarget.position);
+            _animator.SetIKPosition(AvatarIKGoal.LeftHand, _basketFinalTarget.position);
         }
     }
     private void SwitchBetweenTargets()
@@ -56,9 +61,17 @@ public class PlayerIKAnimation : MonoBehaviour
 
         _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
         _animator.SetIKPosition(AvatarIKGoal.RightHand, interpolatedPosition);
+        SwitchBetweenFinalTargets();
+    }
+    private void SwitchBetweenFinalTargets()
+    {
+        Vector3 interpolatedPosition = Vector3.Lerp(
+            _basketTarget.position,
+            _basketFinalTarget.position,
+            _switchFinalWeight);
 
-        _animator.SetIKHintPositionWeight(AvatarIKHint.RightElbow, 1f);
-        _animator.SetIKHintPosition(AvatarIKHint.RightElbow, _hintTarget.position);
+        _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
+        _animator.SetIKPosition(AvatarIKGoal.RightHand, interpolatedPosition);
     }
 }
 

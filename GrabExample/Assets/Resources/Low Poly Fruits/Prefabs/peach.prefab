@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4635515559360632}
   - component: {fileID: 33660874149414388}
   - component: {fileID: 23053647269642574}
+  - component: {fileID: -70323377263387997}
   m_Layer: 0
   m_Name: peach
   m_TagString: Fruit
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-70323377263387997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541859410316496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: 0.0010625503, y: 0.00045279338, z: 0.0000000018626449}

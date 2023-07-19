@@ -17,10 +17,13 @@ public class Graber : MonoBehaviour
     }
     public void InstantiateGrabedObject(Transform spawnTransform)
     {
-        FruitObject.AddComponent<Rigidbody>();
-        FruitObject.AddComponent<SphereCollider>(); 
-        FruitObject.GetComponent<Rigidbody>().mass = 20;
-        Instantiate(FruitObject, spawnTransform.position, Quaternion.identity);
-        Destroy(FruitObject);
+        if(FruitObject != null)
+        {
+            FruitObject.AddComponent<Rigidbody>();
+            FruitObject.AddComponent<SphereCollider>();
+            FruitObject.GetComponent<Rigidbody>().mass = 20;
+            Instantiate(FruitObject, spawnTransform.position, Quaternion.identity);
+            Destroy(FruitObject);
+        }
     }
 }

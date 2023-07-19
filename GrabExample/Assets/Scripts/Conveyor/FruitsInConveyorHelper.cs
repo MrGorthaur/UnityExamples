@@ -18,7 +18,6 @@ public class FruitsInConveyorHelper
         int generateCount = Random.Range(0, prefabObjects.Length);
         var fruit = GameObject.Instantiate(prefabObjects[generateCount], startPoint, Quaternion.identity);
         fruit.AddComponent<Rigidbody>();
-        fruit.AddComponent<BoxCollider>();
         fruit.AddComponent<Fruit>();
     }
 }

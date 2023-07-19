@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4863069348827460}
   - component: {fileID: 33467545753722788}
   - component: {fileID: 23644498670348300}
+  - component: {fileID: -877551587831396165}
   m_Layer: 0
   m_Name: strawberry
   m_TagString: Fruit
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-877551587831396165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724972533694550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: 0.00009602611, y: -0.00002008816, z: -4.6566123e-10}
