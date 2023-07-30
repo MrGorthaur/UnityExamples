@@ -27,7 +27,7 @@
 @back {g_UnivercityTable}
 @hide Harmony,Neo
 @char {g_Adam} pos:{g_Forward}
-@if "g_Choice_2_9_Var_1 == true | g_Choice_2_10_Var_1 == true"
+@if "g_Choice_2_9_Var_1 == true || g_Choice_2_10_Var_1 == true"
 @gosub TeacherDesk.Start1
 @elseIf g_Choice_2_10_Var_2==true
 @gosub TeacherDesk.Start2
