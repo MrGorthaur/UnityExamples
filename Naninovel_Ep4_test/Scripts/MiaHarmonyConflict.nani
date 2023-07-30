@@ -1,0 +1,73 @@
+#Start
+@print text:"Are you insane?! " author:Mia
+@char {g_HarmonyGloat} pos:{g_Forward}
+@print text:"Oopsie. Sorry about that." author:Harmoni 
+@char {g_NeoHappy} pos:{g_Forward}
+@char {g_HarmonyHappy} pos:{g_Back}
+@print text:"That's a bummer. I guess you' ll have to rewrite it, though I wouldn't bother if I were you. Your essay has no scientific value anyway." author:Neo
+@char {g_Adam} pos:50,0,1 
+@print text:"[NAME], what's going on? " author:Adam 
+@choice "Complain about Harmony." goto:.Choice_2_9_Var_1
+@choice "Keep silent." goto:.Choice_2_9_Var_2
+@stop wait:true
+
+#Choice_2_9_Var_1
+@set g_Choice_2_9_Var_1=true
+...I couldn't let her to get away with it!
+@print text:"Harmony spilled her coffee all over my essay!" author:Mia
+...Harmony rolled her eyes
+@print text:"I didn't do it on purpose, Mr. Harrelson." author:Harmony
+@print text:"But my work is ruined!" author:Mia
+@print text:"How do we know you didn't want it ruined? You could've tripped Harmony intentionally. I mean, this way nobody gets to see your incapability to write anything coherent. " author:Neo
+...There were some nasty chuckles in the classroom. Then Mr. Harrelson raised his voice.
+@print text:"Quiet, class! [NAME], whatever the nature of your problem, I'm giving you extra time. So don't worry." author:Adam
+...Neo grimaced. I had to start over.
+
+Magic -1
+@goto InitializeScript.TeacherDesk
+
+
+#Choice_2_9_Var_2
+@set g_Choice_2_9_Var_2=true
+...I wasn't sure what to do. If I exposed Harmony because of the coffee, I'd become a walking cringe. But was there enough time to rewrite the essay?
+@print text:"MIA: I'm sorry, Professor. I got distracted and caused this to happen myself." author:Mia
+...I heard Harmony and Neo snicker behind me.
+@choice "Make Harmony apologize (you need +5 Magic)." goto:.Choice_2_10_Var_1
+@choice "Ask for extra time to rewrite the essay." goto:.Choice_2_10_Var_2
+@stop wait:true
+
+#Choice_2_10_Var_1
+@set g_Choice_2_10_Var_1=true
+...I suddenly remembered that I could sometimes influence people. I pressed my eyes shut and concentrated.
+@char {g_MiaCloseEyes} pos:{g_MiaPosition}
+@print "Admit you did it." author:Mia
+...Harmony stood up and suddenly gave out the truth.
+@char {g_Mia} pos:{g_MiaPosition}
+@print "Mr. Harrelson, it was my fault. I deliberately spilled my coffee on [NAME]'s essay. I'm sorry, [NAME]!" author:Harmony
+...Neo jumped. The room fell silent. But Mr. Harrelson wasn't looking at Harmony, he fixed his gaze on me. He looked both intrigued and perplexed.
+@char {g_NeoSurprise} pos:{g_Forward}
+@spawn ShakeCharacter params:Neo,1
+@print "That's nice to hear, Miss Harmony. Not that you did it, but that you had the courage to own up to it. I don't think anyone would object to [NAME] taking some extra time to rewrite her essay, given the circumstances." author:Adam
+@print "What'd you do that for??" author:Neo
+...Harmony stared at him, confused.
+@print "What do you mean?" author:Harmony
+@print "Why did you admit spilling the stupid coffee?" author:Neo
+@print "Have you gone mad?? I admitted no such thing!" author:Harmony
+@print " Now you're being plain scary. I think you need to see a doctor." author:Neo
+...Neo picked up his essay and went to turn it in.
+@char {g_Neo} pos:150 
+...I gave Harmony a devious wink as she just stood there in shock...
+@char {g_HarmonySurprise} pos:{g_Back}
+@print "Thanks for confessing. I forgive you. " author:Mia
+@return
+#Choice_2_10_Var_2
+@set g_Choice_2_10_Var_2=true
+...I figured the only sensible thing left for me to do was to ask Mr. Harrelson to give me more time to rewrite the essay.
+@print "I'm sorry this happened. Can I ask for extra time to rewrite the whole thing? " author:Mia
+@print "I'm sorry, [NAME]. You'll just have to turn it in as it is." author:Adam
+...I was devastated. The essay turned out to be a waste of time and effort. I wasn't going to get that internship. 
+@print "Well, good luck I guess. I bet you're going to win." author:Neo
+...Oddly, for a split second it seemed like Neo was not happy about how things turned out.
+
+Magic +1
+@return

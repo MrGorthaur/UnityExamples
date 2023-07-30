@@ -1,0 +1,54 @@
+#Start
+...The dining hall was in the loft overlooking the entire valley, the campus, the college spires... Adam was already there, with a bottle of wine on the table to keep him company while he waited. I greeted him as he moved out a chair for me, and then I looked at the label. 
+@print "Alchemist's Tears? What an odd name for a wine!" author:Mia
+@print "I know. It's from a French winery, and it's based on a recipe found in a workshop that belonged to a medieval alchemist. They were an interesting lot, the alchemists. Much like the witches." author:Adam
+...I remembered the strange dream I had about the alchemist and his remedy for the curse... There was something else in that dream... a silver jar... with some kind of balm inside? Mr. Harrelson interrupted my recollection.
+@print "Unlike witches, however, they practiced things that modern science, albeit with a strain, can call scientific. Like finding the secret to immortality or turning lead into gold." author:Adam
+@print "Yes, they were scientists in a world almost devoid of science. But I think they rather tried to explore the fabric of the universe. They wanted to know what stuff was made. " author:Mia
+@print "So you don't think they were looking for the philosopher's' stone?" author:Adam
+@print "I think the philosopher's' stone was a metaphor for what they had instead of the scientific method back then. I mean, I don't believe it was an actual physical substance." author:Mia
+...Mr. Harrelson smiled at me.
+@char {g_AdamHappy}
+@print "You're an extraordinary girl, [NAME]. This is the first time I see so much skepticism in someone so young... " author:Adam
+@char {g_MiaSurprise}
+@char {g_Adam} pos:50
+@print "Wow, what's he doing here?" author:Mia
+...Neo was leering at me through the lens of his phone. A second later, he was standing at our table.
+ 
+@if "g_Choice_2_9_Var_1 == true | g_Choice_2_10_Var_1 == true"
+@goto .NeoShowsUp
+@else
+@return
+
+#NeoShowsUp
+...Neo showed us his phone screen with a triumphant look on his face.
+@print "NEO: Fancy meeting you here! A prof and his student in a romantic setting! No, no, of course it's not what it looks like, you don't have to explain. Of course the student isn't flirting with the prof because she wants the internship. And of course the wine is only there as table decor; who cares that the student is underage??" author:Neo
+@choice "Ignore him." goto:.Choice_2_12_Var_1
+@choice "Get angry at him." goto:.Choice_2_12_Var_2
+@choice "Ask him to delete the photo." goto:.Choice_2_12_Var_3
+
+#Choice_2_12_Var_1
+...I decided to let him think what he will. I had the freedom of having dinner with whomever I wanted.
+@print "What's your problem? Are you envious that you didn't make friends with the professor first?" author:Mia
+@print "Nah. I'm just here to make some high-quality photos. Just in case." author:Neo
+@return
+
+#Choice_2_12_Var_2
+...Why was he stalking me all day??
+@char {g_MiaCloseEyes}
+@print "I hope you choke on your spite, Neo." author:Mia
+...I felt my mother's amulet vibrate. Before I knew what was happening, Neo grabbed an olive from the bowl on our table and popped it in his mouth. And suddenly, right in front of my eyes, his face changed, he started choking, clutching at his throat... He was unironically choking! I told myself I should think a hundred times before making wishes like that again!
+@char {g_Mia}
+@char {g_AdamSurprise}
+;NEO, CHOKING ON AN OLIVE
+...I jumped up to him, grabbed him from behind and yanked him up a little. And again! Mr. Harrelson joined me.
+...The olive finally sprung out of Neo's throat, and he started to cough, which meant he was breathing again. I let out a sigh of relief. He gave me an angry look and pushed me away.
+@print "Neo, are you all right? " author:Adam
+@print "I'm fine. It's your little minion who's the problem." author:Neo
++1Magic
+@return
+
+#Choice_2_12_Var_3
+@print "I didn't give you permission to take my picture, and you're intruding. Don't be rude. Please delete it." author:Mia
+@print "This is a public place, you dummy. You're allowed to take photos of anyone you want here, including celebrities such as your date." author:Neo
+@return

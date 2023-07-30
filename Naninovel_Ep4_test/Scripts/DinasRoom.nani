@@ -1,0 +1,36 @@
+#Start
+...Dina was home already when I burst into the room. She immediately noticed how worked up I was.
+@print "What's up? You look like you've seen a ghost." author:Dina
+@if "g_Choice_2_9_Var_1 == true | g_Choice_2_10_Var_1 == true"
+@goto .Start1
+@elseIf g_Choice_2_10_Var_2==true
+@goto .Start2
+@endIf
+
+#Start1
+@print "I'm having dinner with Mr. Harrelson tonight!" author:Mia
+@char {g_DinaSurprise}
+@print "Wow, girl! It's your first day of college, and you've already snatched up the most handsome prof of all!" author:Dina
+@char {g_Dina}
+@goto .Then
+
+#Start2
+@print "I failed the essay. And I'm having dinner with Mr. Harrelson tonight." author:Mia
+@print " I don't get how these two things are connected, but congratulations! It's your first day of college, and you've already snatched up the most handsome prof of all!" author:Dina
+
+#Then
+@print "That's just business, I mean, it's an academic opportunity!" author:Mia
+@char {g_DinaSurprise}
+@print "Chill, I'm not about to judge you even if it's not a 100% academic opportunity!" author:Dina
+@char {g_Dina}
+...I think I blushed a bit.
+@print "Please stop the insinuations. Everyone knows it's wrong for professors to go out with their students, and vice versa." author:Mia
+@print "Sure. Even though all the prerequisites for an awesome love story are there..." author:Dina
+@print "Prerequisites? Like mutual respect or a common passion for history? " author:Mia
+@print "Obstacles, silly! Stuff that prevents potential lovers from being together. Social status, financial differences, other committments, a terrible sickness..." author:Dina
+@print "Are those absolutely necessary?.." author:Mia
+@print "Sure! Romeo and Juliet couldn't be together because their families were feuding and Romeo killed Juliet's brother. No one would ever care about their story if they just averagely met, fell in love and had babies... boooring!" author:Dina
+@print "Oh, it's almost six. It's not polite to be late to a scientific discussion with a professor." author:Mia
+@char {g_DinaHappy}
+@print "Especially when he's so handsome." author:Dina
+@return

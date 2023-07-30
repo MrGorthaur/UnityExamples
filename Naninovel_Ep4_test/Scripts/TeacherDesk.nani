@@ -1,0 +1,58 @@
+#Start1
+...I finished rewriting my essay, walked up to Mr. Harrelson's desk and turned it in. There was no one left in the room besides the two of us.
+@print "Thank you, [NAME]. I'm sure your essay is very interesting." author:Adam
+@print "Thank YOU. I hope you won't regret having to wait." author:Mia
+@goto .Then
+
+#Start2
+...I walked up to Mr. Harrelson's desk and turned in my dripping essay.
+@print "I'm sorry about that. I was trying to do the best I can. But maybe luck is not on my side." author:Mia
+@print "I'm sorry too. But there will be lots of competitions to follow. You're sure to win one." author:Adam
+@print "I hope so" author:Mia
+
+#Then
+@print "I meant to ask you, did you read the book I recommended? Did anything you read there come in handy today?" author:Adam
+...It would have been embarrassing to admit that I fell asleep each time I attempted to read it.
+@print "Not yet... I mean, I checked the book out, but... There's so much in there, I haven't really grasped it yet..." author:Mia
+...Mr. Harrelson kept peering at me closely.
+@print "No wonder. This book, how should I say this, is of profound depth and contains many layers of knowledge. Well, I hope you continue working with it." author:Adam
+...I nodded and turned toward the exit. Mr. Harrelson called out to me.
+@print "[NAME], how would you like to grab some dinner and talk things over? " author:Adam
+...I felt blood rushing to my face. Was flirting with me?? That wouldn't be right... Would it?
+@print "I suggest we meet at Green Square Cafe here on campus. I'd be happy to tell you a bit about my scientific discoveries...and learn more about your plans with regard to science and learning." author:Adam
+
+@choice " It's a chance to get to know him better." goto:.Choice_2_11_Var_1
+@choice " It's better to refuse." goto:.Choice_2_11_Var_2
+@stop
+#Choice_2_11_Var_1
+@set g_Choice_2_11_Var_1=true
+...I figured Mr. Harrelson probably needed a research assistant or something, and I looked like a promising student to him. It was stupid to think he was flirting. But the idea of spending some time with him sounded so nice...
+@print "Sure. When is a good time for you?" author:Mia
+...Mr. Harrelson briefly checked the calendar in his phone.
+@print " Six o'clock. Can you make it?" author:Adam
+...Our eyes were locked...I couldn't look away. It felt like his eyes are pulling me in...
+@print "I'm sorry" author:Mia
+@print "So, six o'clock at Green Square?" author:Adam
+@print "Yup. See you there!" author:Mia
+...Mr. Harrelson nodded and started packing up the student essays. I walked out of the classroom.
+
+ADAM IS GRATEFUL FOR YOUR TRUST
+@return
+
+#Choice_2_11_Var_2
+@set g_Choice_2_11_Var_2=true
+...This felt very odd. I was not about to engage in some kind of an "extracurricular" relationship with a prof.
+@print "I'm sorry. I can't today. Or at all, actually..." author:Mia
+@print "No, I'm sorry. I think I scared you a bit. Actually, it's quite common for a professor to try to get to know promising students that might advance science... I do believe that you could write a fantastic " author:Adam
+...I felt like a total idiot. What was I thinking! Mr. Harrelson could not possibly be attracted to me! This was purely a scientific proposal, a learning opportunity!
+@print "Hmm...I think I could reschedule my plans. What should I prepare for the dinner?" author:Mia
+...My question seemed to amuse him, and I felt embarrassed again.
+@print "Well... I mean, prepare to discuss a specific topic. Maybe I should bring my notes..." author:Mia
+@print "You don't need to. We'll just talk and find some junction points where our opinions and interests intersect." author:Adam
+@print "Sure. Ok. Great!" author:Mia
+@print "So, six o'clock at Green Square?" author:Adam
+@print "Yup. See you there!" author:Mia
+...Mr. Harrelson nodded and started packing up the student essays. I walked out of the classroom, my face burning.
+
+ADAM REALIZES YOU DON'T TRUST HIM
+@return

@@ -1,0 +1,44 @@
+;Characters sprites set
+@set g_Neo="Neo.Neo@3x";g_NeoHappy="Neo.Neo-happy@3x";g_NeoSad="Neo.Neo-sad@3x";g_NeoAngry="Neo.Neo-angry@3x";g_NeoSkeptical="Neo.Neo-skeptical@3x";g_NeoSurprise="Neo.Neo-surprise@3x"
+@set g_Harmony="Harmony.Harmony@3x";g_HarmonyHappy="Harmony.Harmony-happy@3x";g_HarmonyAngry="Harmony.Harmony-angry@3x";g_HarmonySkeptical="Harmony.Harmony-skeptical@3x";g_HarmonySurprise="Harmony.Harmony-surprise@3x";g_HarmonyGloat="Harmony.Harmony-gloat@3x"
+@set g_Adam="Adam.Adam@3x";g_AdamHappy="Adam.Adam-happy@3x";g_AdamAngry="Adam.Adam-angry@3x";g_AdamSkeptical="Adam.Adam-skeptical@3x";g_AdamSurprise="Adam.Adam-surprise@3x"
+@set g_Mia="Mia.Mia_redhead-dress2@3x";g_MiaHappy="Mia.Mia_redhead-dress2-happy@3x";g_MiaAngry="Mia.Mia_redhead-dress2-angry@3x";g_MiaSkeptical="Mia.Mia_redhead-dress2-skeptical@3x";g_MiaSurprise="Mia.Mia_redhead-dress2-surprise@3x";g_MiaCloseEyes="Mia.Mia_redhead-dress2-close_eyes@3x"
+@set g_Dina="Dina.Dina@3x";g_DinaHappy="Dina.Dina-smile@3x";g_DinaSad="Dina.Dina-sad@3x";g_DinaSurprise="Dina.Dina-surprise@3x"
+;Characters position set
+@set g_Back=80;g_Forward=70;g_MiaPosition=30
+;Backgrounds set
+@set g_UnivercityAuditorium="1_2/1series_Bg/MagicMe-University-auditorium@2x";g_UnivercityTable="1_2/1series_Bg/MagicMe-University-auditorium-table@2x";g_DinasRoom="1_2/1series_Bg/Dina_room@2x";g_Cafe="1_2/1series_Bg/Food_street@3x"
+;MiaHarmoniConflict choices
+@set g_Choice_2_9_Var_1=false
+@set g_Choice_2_9_Var_2=false
+@set g_Choice_2_10_Var_1=false
+@set g_Choice_2_10_Var_2=false
+;TeacherDesc choices
+@set g_Choice_2_11_Var_1=false
+@set g_Choice_2_11_Var_2=false
+
+@back {g_UnivercityAuditorium}
+@char {g_Neo} pos:{g_Back}
+@char {g_Harmony} pos:{g_Forward}
+@char {g_MiaAngry} pos:{g_MiaPosition}
+@gosub MiaHarmonyConflict.Start
+
+#TeacherDesk
+@back {g_UnivercityTable}
+@hide Harmony,Neo
+@char {g_Adam} pos:{g_Forward}
+@if "g_Choice_2_9_Var_1 == true | g_Choice_2_10_Var_1 == true"
+@gosub TeacherDesk.Start1
+@elseIf g_Choice_2_10_Var_2==true
+@gosub TeacherDesk.Start2
+@endIf
+;Dina's Room
+@hide Adam
+@back {g_DinasRoom}
+@char {g_Dina} pos:{g_Forward}
+@gosub DinasRoom.Start
+
+@hide Dina
+@back {g_Cafe}
+@char {g_Adam} pos:{g_Forward}
+@gosub GreenSquareCafe.Start
